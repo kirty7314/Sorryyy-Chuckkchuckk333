@@ -12,41 +12,52 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
-            background: linear-gradient(135deg, #1a1a2e 0%, #2a2a3e 100%);
-            height: 100vh;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #ffb3d9 0%, #ff9ad5 25%, #ff82ce 50%, #ff6ac5 75%, #ff5bc0 100%);
+            background-size: 400% 400%;
+            animation: gradientFlow 8s ease infinite;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .page {
             width: 100%;
-            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             position: relative;
-            padding: 40px 20px;
+            min-height: 100vh;
         }
 
-        /* Sparkles */
+        /* Animated Sparkles */
         .sparkles-container {
-            position: absolute;
+            position: fixed;
             width: 100%;
             height: 100%;
             pointer-events: none;
+            top: 0;
+            left: 0;
         }
 
         .sparkle {
             position: absolute;
-            font-size: 20px;
+            font-size: 24px;
             animation: sparkle-float 3s ease-in-out forwards;
         }
 
         @keyframes sparkle-float {
             0% {
                 opacity: 0;
-                transform: translateY(0) scale(0.5);
+                transform: translateY(0) scale(0.3);
             }
             50% {
                 opacity: 1;
@@ -57,32 +68,35 @@
             }
         }
 
-        /* Cute Cat GIF area */
+        /* 3D Cute Cat - Clingy */
         .cat-display {
-            position: absolute;
-            top: 40px;
-            right: 60px;
-            font-size: 100px;
-            animation: gentle-float 4s ease-in-out infinite;
+            position: fixed;
+            top: 50px;
+            right: 80px;
+            font-size: 120px;
+            animation: cat-clingy 3s ease-in-out infinite;
+            filter: drop-shadow(0 10px 25px rgba(255, 100, 150, 0.5));
+            z-index: 5;
         }
 
-        @keyframes gentle-float {
+        @keyframes cat-clingy {
             0%, 100% {
-                transform: translateY(0);
+                transform: translateY(0) rotate(-5deg);
             }
             50% {
-                transform: translateY(-20px);
+                transform: translateY(-25px) rotate(5deg);
             }
         }
 
         /* Cards Container */
         .cards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
             z-index: 10;
-            max-width: 900px;
+            max-width: 1000px;
             animation: cards-fade-in 1.5s ease-out;
+            margin: 60px auto;
         }
 
         @keyframes cards-fade-in {
@@ -95,14 +109,15 @@
         }
 
         .memory-card {
-            background: rgba(232, 180, 212, 0.08);
-            border: 1px solid rgba(232, 180, 212, 0.3);
-            border-radius: 15px;
-            padding: 30px 25px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 25px;
+            padding: 40px 30px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            transition: all 0.4s ease;
+            backdrop-filter: blur(15px);
+            transition: all 0.5s ease;
             animation: card-in 0.8s ease-out backwards;
+            box-shadow: 0 15px 50px rgba(255, 100, 150, 0.3);
         }
 
         .memory-card:nth-child(1) { animation-delay: 0.2s; }
@@ -112,7 +127,7 @@
         @keyframes card-in {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -121,109 +136,151 @@
         }
 
         .memory-card:hover {
-            background: rgba(232, 180, 212, 0.15);
-            border-color: rgba(232, 180, 212, 0.5);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(232, 180, 212, 0.2);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.2));
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 25px 70px rgba(255, 100, 150, 0.5);
         }
 
         .card-icon {
-            font-size: 50px;
-            margin-bottom: 15px;
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: icon-bounce 2s ease-in-out infinite;
+        }
+
+        .card-icon:nth-child(1) { animation-delay: 0s; }
+        .card-icon:nth-child(2) { animation-delay: 0.3s; }
+        .card-icon:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes icon-bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
         }
 
         .card-text {
-            font-size: 1.1rem;
-            color: #d4a5d4;
-            line-height: 1.6;
-            font-weight: 300;
+            font-size: 1.2rem;
+            color: #fff;
+            line-height: 1.8;
+            font-weight: 500;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .nav-buttons {
-            position: absolute;
-            bottom: 40px;
             display: flex;
             gap: 20px;
             z-index: 20;
+            margin: 60px 0 40px 0;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .btn {
-            padding: 12px 35px;
-            font-size: 1rem;
-            border: 2px solid #e8b4d4;
-            background: transparent;
-            color: #e8b4d4;
+            padding: 15px 45px;
+            font-size: 1.1rem;
+            border: 3px solid #fff;
+            background: linear-gradient(135deg, rgba(255, 100, 150, 0.8), rgba(255, 130, 206, 0.8));
+            color: #fff;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             text-decoration: none;
             display: inline-block;
-            font-weight: 500;
+            font-weight: 600;
+            box-shadow: 0 12px 40px rgba(255, 100, 150, 0.4);
         }
 
         .btn:hover {
-            background: rgba(232, 180, 212, 0.1);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(232, 180, 212, 0.2);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 18px 55px rgba(255, 100, 150, 0.6);
+            background: linear-gradient(135deg, rgba(255, 130, 206, 0.9), rgba(255, 150, 220, 0.9));
         }
 
         .btn-back {
-            border-color: #888;
-            color: #888;
+            border-color: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .btn-back:hover {
-            background: rgba(136, 136, 136, 0.1);
-            box-shadow: 0 8px 25px rgba(136, 136, 136, 0.2);
+            background: rgba(255, 255, 255, 0.25);
         }
 
         .page-title {
-            position: absolute;
-            top: 30px;
-            left: 40px;
-            font-size: 1.8rem;
-            color: #e8b4d4;
-            font-weight: 300;
-            letter-spacing: 1px;
+            font-size: 2.5rem;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 2px;
             z-index: 15;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: title-in 1s ease-out;
+        }
+
+        @keyframes title-in {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Floating decorations */
+        .decoration-float {
+            position: fixed;
+            font-size: 35px;
+            opacity: 0.5;
+            animation: decoration-float 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .deco-1 { top: 15%; left: 5%; animation-delay: 0s; }
+        .deco-2 { bottom: 30%; right: 5%; animation-delay: 1.5s; }
+
+        @keyframes decoration-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
         }
     </style>
 </head>
 <body>
+    <div class="sparkles-container" id="sparklesContainer"></div>
+    <div class="decoration-float deco-1">💗</div>
+    <div class="decoration-float deco-2">✨</div>
+    
     <div class="page">
-        <div class="sparkles-container" id="sparklesContainer"></div>
-        
-        <div class="page-title">Memories & Feelings</div>
+        <div class="page-title">What You Mean To Me</div>
 
         <div class="cards-container">
             <div class="memory-card">
-                <div class="card-icon">✨</div>
-                <div class="card-text">Every moment with you matters to me</div>
+                <div class="card-icon">💞</div>
+                <div class="card-text">Every moment with you is precious... You're everything to me</div>
             </div>
             <div class="memory-card">
-                <div class="card-icon">💭</div>
-                <div class="card-text">I think about what I did, and it hurts</div>
+                <div class="card-icon">😭</div>
+                <div class="card-text">The pain I caused you haunts me constantly... I'm so deeply sorry</div>
             </div>
             <div class="memory-card">
-                <div class="card-icon">💝</div>
-                <div class="card-text">You mean more than you could ever know</div>
+                <div class="card-icon">💕</div>
+                <div class="card-text">You mean more than words could ever express... I can't live without you</div>
             </div>
         </div>
-
-        <div class="cat-display">🐱</div>
 
         <div class="nav-buttons">
             <a href="page2.html" class="btn btn-back">Back</a>
-            <a href="page4.html" class="btn">one last thing…</a>
+            <a href="page4.html" class="btn">Please listen to me... 💝</a>
         </div>
+
+        <div class="cat-display">😻</div>
     </div>
 
     <script>
-        // Generate sparkles
         function createSparkle() {
             const sparkle = document.createElement('div');
             sparkle.classList.add('sparkle');
-            sparkle.textContent = '✨';
+            const sparkles = ['✨', '💫', '⭐', '🌟'];
+            sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
             
             const randomX = Math.random() * window.innerWidth;
             const randomDelay = Math.random() * 1.5;
@@ -237,12 +294,10 @@
             setTimeout(() => sparkle.remove(), 4500);
         }
 
-        // Create sparkles at intervals
-        setInterval(createSparkle, 600);
+        setInterval(createSparkle, 500);
         
-        // Create initial sparkles
-        for (let i = 0; i < 3; i++) {
-            setTimeout(() => createSparkle(), i * 300);
+        for (let i = 0; i < 4; i++) {
+            setTimeout(() => createSparkle(), i * 250);
         }
     </script>
 </body>
