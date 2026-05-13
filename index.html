@@ -12,10 +12,18 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
             overflow: hidden;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #ffd1dc 0%, #ffb3d9 25%, #ff9ad5 50%, #ff82ce 75%, #ff6ac5 100%);
             height: 100vh;
+            animation: gradientShift 8s ease infinite;
+            background-size: 400% 400%;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .page {
@@ -39,39 +47,50 @@
         .heart {
             position: absolute;
             font-size: 24px;
-            opacity: 0.6;
+            opacity: 0.7;
             animation: float 6s ease-in-out forwards;
         }
 
         @keyframes float {
             0% {
                 opacity: 0;
-                transform: translateY(0) translateX(0) scale(1);
+                transform: translateY(0) translateX(0) scale(1) rotate(0deg);
             }
             50% {
-                opacity: 0.7;
+                opacity: 0.8;
             }
             100% {
                 opacity: 0;
-                transform: translateY(-100vh) translateX(50px) scale(0.5);
+                transform: translateY(-100vh) translateX(50px) scale(0.5) rotate(360deg);
             }
         }
 
-        /* Cute Cat Corner */
-        .cat {
+        /* 3D Cute Cat */
+        .cat-3d {
             position: absolute;
-            bottom: 20px;
-            right: 30px;
-            font-size: 80px;
-            animation: gentle-bounce 3s ease-in-out infinite;
+            bottom: 30px;
+            right: 50px;
+            font-size: 100px;
+            animation: cat-bounce 2s ease-in-out infinite, cat-sway 4s ease-in-out infinite;
+            filter: drop-shadow(0 10px 20px rgba(255, 130, 206, 0.4));
+            transform-style: preserve-3d;
         }
 
-        @keyframes gentle-bounce {
+        @keyframes cat-bounce {
             0%, 100% {
-                transform: translateY(0);
+                transform: translateY(0) rotateY(0deg);
             }
             50% {
-                transform: translateY(-15px);
+                transform: translateY(-20px) rotateY(5deg);
+            }
+        }
+
+        @keyframes cat-sway {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10px);
             }
         }
 
@@ -79,50 +98,93 @@
         .content {
             text-align: center;
             z-index: 10;
-            animation: fade-in 1s ease-out;
+            animation: fade-in 1.2s ease-out;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 60px 80px;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 60px rgba(255, 130, 206, 0.3);
         }
 
         @keyframes fade-in {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px) scale(0.9);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
         }
 
         .main-text {
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: #fff;
-            margin-bottom: 60px;
-            font-weight: 300;
+            margin-bottom: 20px;
+            font-weight: 700;
             letter-spacing: 2px;
+            text-shadow: 0 5px 15px rgba(255, 130, 206, 0.5);
+            animation: text-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes text-glow {
+            0%, 100% {
+                text-shadow: 0 5px 15px rgba(255, 130, 206, 0.5);
+            }
+            50% {
+                text-shadow: 0 8px 25px rgba(255, 130, 206, 0.8);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
 
         .continue-btn {
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            background: rgba(255, 182, 193, 0.3);
-            color: #ffb6c1;
-            border: 2px solid #ffb6c1;
+            padding: 16px 50px;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, #ff6ac5, #ff82ce);
+            color: #fff;
+            border: 3px solid #fff;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             text-decoration: none;
             display: inline-block;
-            font-weight: 500;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(255, 130, 206, 0.4);
         }
 
         .continue-btn:hover {
-            background: rgba(255, 182, 193, 0.5);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.3);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 45px rgba(255, 130, 206, 0.6);
+            background: linear-gradient(135deg, #ff82ce, #ff9ad5);
         }
 
         .continue-btn:active {
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
+        }
+
+        /* Floating decoration */
+        .decoration {
+            position: absolute;
+            font-size: 30px;
+            opacity: 0.6;
+            animation: float-decoration 6s ease-in-out infinite;
+        }
+
+        .deco1 { top: 15%; left: 10%; animation-delay: 0s; }
+        .deco2 { top: 20%; right: 15%; animation-delay: 1s; }
+        .deco3 { bottom: 20%; left: 15%; animation-delay: 2s; }
+
+        @keyframes float-decoration {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
         }
     </style>
 </head>
@@ -130,20 +192,25 @@
     <div class="page">
         <div class="hearts-container" id="heartsContainer"></div>
         
+        <div class="decoration deco1">🌸</div>
+        <div class="decoration deco2">💕</div>
+        <div class="decoration deco3">✨</div>
+        
         <div class="content">
             <div class="main-text">hey dumboo 🥺</div>
-            <a href="page2.html" class="continue-btn">Continue</a>
+            <div class="subtitle">I need to tell you something...</div>
+            <a href="page2.html" class="continue-btn">Let me explain 💝</a>
         </div>
 
-        <div class="cat">🐱</div>
+        <div class="cat-3d">😸</div>
     </div>
 
     <script>
-        // Generate floating hearts
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('heart');
-            heart.textContent = '❤️';
+            const hearts = ['❤️', '💕', '💖', '💗'];
+            heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
             
             const randomX = Math.random() * window.innerWidth;
             const randomDelay = Math.random() * 2;
@@ -157,12 +224,10 @@
             setTimeout(() => heart.remove(), 8000);
         }
 
-        // Create hearts at intervals
-        setInterval(createHeart, 500);
+        setInterval(createHeart, 400);
         
-        // Create some initial hearts
-        for (let i = 0; i < 3; i++) {
-            setTimeout(() => createHeart(), i * 200);
+        for (let i = 0; i < 4; i++) {
+            setTimeout(() => createHeart(), i * 150);
         }
     </script>
 </body>
