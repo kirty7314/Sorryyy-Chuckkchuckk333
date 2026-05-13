@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories & Feelings</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a2e 0%, #2a2a3e 100%);
+            height: 100vh;
+        }
+
+        .page {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 40px 20px;
+        }
+
+        /* Sparkles */
+        .sparkles-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .sparkle {
+            position: absolute;
+            font-size: 20px;
+            animation: sparkle-float 3s ease-in-out forwards;
+        }
+
+        @keyframes sparkle-float {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0.5);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-80vh) scale(0);
+            }
+        }
+
+        /* Cute Cat GIF area */
+        .cat-display {
+            position: absolute;
+            top: 40px;
+            right: 60px;
+            font-size: 100px;
+            animation: gentle-float 4s ease-in-out infinite;
+        }
+
+        @keyframes gentle-float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Cards Container */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            z-index: 10;
+            max-width: 900px;
+            animation: cards-fade-in 1.5s ease-out;
+        }
+
+        @keyframes cards-fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .memory-card {
+            background: rgba(232, 180, 212, 0.08);
+            border: 1px solid rgba(232, 180, 212, 0.3);
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            animation: card-in 0.8s ease-out backwards;
+        }
+
+        .memory-card:nth-child(1) { animation-delay: 0.2s; }
+        .memory-card:nth-child(2) { animation-delay: 0.4s; }
+        .memory-card:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes card-in {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .memory-card:hover {
+            background: rgba(232, 180, 212, 0.15);
+            border-color: rgba(232, 180, 212, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(232, 180, 212, 0.2);
+        }
+
+        .card-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+            color: #d4a5d4;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .nav-buttons {
+            position: absolute;
+            bottom: 40px;
+            display: flex;
+            gap: 20px;
+            z-index: 20;
+        }
+
+        .btn {
+            padding: 12px 35px;
+            font-size: 1rem;
+            border: 2px solid #e8b4d4;
+            background: transparent;
+            color: #e8b4d4;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background: rgba(232, 180, 212, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(232, 180, 212, 0.2);
+        }
+
+        .btn-back {
+            border-color: #888;
+            color: #888;
+        }
+
+        .btn-back:hover {
+            background: rgba(136, 136, 136, 0.1);
+            box-shadow: 0 8px 25px rgba(136, 136, 136, 0.2);
+        }
+
+        .page-title {
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            font-size: 1.8rem;
+            color: #e8b4d4;
+            font-weight: 300;
+            letter-spacing: 1px;
+            z-index: 15;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="sparkles-container" id="sparklesContainer"></div>
+        
+        <div class="page-title">Memories & Feelings</div>
+
+        <div class="cards-container">
+            <div class="memory-card">
+                <div class="card-icon">✨</div>
+                <div class="card-text">Every moment with you matters to me</div>
+            </div>
+            <div class="memory-card">
+                <div class="card-icon">💭</div>
+                <div class="card-text">I think about what I did, and it hurts</div>
+            </div>
+            <div class="memory-card">
+                <div class="card-icon">💝</div>
+                <div class="card-text">You mean more than you could ever know</div>
+            </div>
+        </div>
+
+        <div class="cat-display">🐱</div>
+
+        <div class="nav-buttons">
+            <a href="page2.html" class="btn btn-back">Back</a>
+            <a href="page4.html" class="btn">one last thing…</a>
+        </div>
+    </div>
+
+    <script>
+        // Generate sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.textContent = '✨';
+            
+            const randomX = Math.random() * window.innerWidth;
+            const randomDelay = Math.random() * 1.5;
+            
+            sparkle.style.left = randomX + 'px';
+            sparkle.style.top = window.innerHeight + 'px';
+            sparkle.style.animationDelay = randomDelay + 's';
+            
+            document.getElementById('sparklesContainer').appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 4500);
+        }
+
+        // Create sparkles at intervals
+        setInterval(createSparkle, 600);
+        
+        // Create initial sparkles
+        for (let i = 0; i < 3; i++) {
+            setTimeout(() => createSparkle(), i * 300);
+        }
+    </script>
+</body>
+</html>
