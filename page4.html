@@ -105,6 +105,13 @@
             50% { transform: translateY(-10px); }
         }
 
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
         .content {
             position: relative;
             z-index: 10;
@@ -126,4 +133,218 @@
             color: #d63031;
             margin-bottom: 15px;
             font-weight: 600;
-            letter-spacing:
+            letter-spacing: 2px;
+        }
+
+        .emoji-divider {
+            font-size: 1.5em;
+            margin: 20px 0;
+            letter-spacing: 10px;
+        }
+
+        .letter {
+            color: #2d3436;
+            line-height: 1.8;
+            font-size: 1.05em;
+            text-align: left;
+            margin: 20px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .letter p {
+            margin-bottom: 15px;
+        }
+
+        .memory {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.2), rgba(255, 218, 185, 0.2));
+            padding: 15px;
+            border-radius: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ff7675;
+            font-style: italic;
+            color: #636e72;
+        }
+
+        .quote {
+            font-size: 1.2em;
+            color: #d63031;
+            font-weight: 500;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .closing {
+            margin-top: 30px;
+            font-size: 1.1em;
+            color: #2d3436;
+            font-weight: 500;
+        }
+
+        .heart-rain {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            animation: fall 3s infinite;
+            opacity: 0.6;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 10px;
+            position: relative;
+            z-index: 20;
+        }
+
+        .nav-buttons a {
+            flex: 1;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 1em;
+        }
+
+        .back-btn {
+            background: linear-gradient(135deg, #a29bfe, #74b9ff);
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(74, 185, 255, 0.3);
+        }
+
+        .next-btn {
+            background: linear-gradient(135deg, #fab1a0, #ff7675);
+        }
+
+        .next-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 118, 117, 0.3);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            .header {
+                font-size: 1.8em;
+            }
+
+            .names {
+                font-size: 1.3em;
+            }
+
+            .letter {
+                font-size: 0.95em;
+            }
+
+            .rabbit-top-left {
+                width: 60px;
+                height: 60px;
+            }
+
+            .rabbit-top-right {
+                width: 55px;
+                height: 55px;
+            }
+
+            .rabbit-bottom-left {
+                width: 50px;
+                height: 50px;
+            }
+
+            .rabbit-bottom-right {
+                width: 65px;
+                height: 65px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Rabbit image placeholders with borders -->
+        <div class="rabbit-top-left">
+            <img src="rabbit.jpg" alt="Melon" class="rabbit-img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23ffb6c1%22/%3E%3Ctext x=%2250%22 y=%2260%22 font-size=%2230%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3E🐰%3C/text%3E%3C/svg%3E'" />
+        </div>
+
+        <div class="rabbit-top-right">
+            <img src="rabbit.jpg" alt="Musk" class="rabbit-img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23ffe4e1%22/%3E%3Ctext x=%2250%22 y=%2260%22 font-size=%2230%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3E🐰%3C/text%3E%3C/svg%3E'" />
+        </div>
+
+        <div class="rabbit-bottom-left">
+            <img src="rabbit.jpg" alt="Melon & Musk" class="rabbit-img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23ffc0cb%22/%3E%3Ctext x=%2250%22 y=%2260%22 font-size=%2230%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3E💕%3C/text%3E%3C/svg%3E'" />
+        </div>
+
+        <div class="rabbit-bottom-right">
+            <img src="rabbit.jpg" alt="Forever loved" class="rabbit-img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23ffb6c1%22/%3E%3Ctext x=%2250%22 y=%2260%22 font-size=%2230%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3E🌸%3C/text%3E%3C/svg%3E'" />
+        </div>
+
+        <div class="content">
+            <div class="header">🐰 For My Sweet Bunnies 🐰</div>
+            <div class="names">Melon & Musk</div>
+            
+            <div class="emoji-divider">💕 🌸 ✨ 💕</div>
+
+            <div class="letter">
+                <p>Oh my precious little ones,</p>
+                
+                <p>I don't even know where to begin... The silence without your soft fur, your tiny hops, and those adorable wiggly noses is almost unbearable. You two were more than just pets—you were pure joy wrapped in fur and love.</p>
+
+                <div class="memory">
+                    "Melon, with your sweet personality and those cute little hops... Musk, with your feisty spirit and playful energy... Together, you were perfection."
+                </div>
+
+                <p>Every moment with you was a treasure I didn't realize I was collecting until it was too late. The way you'd both come running when you heard my voice, how you'd cuddle close when I needed comfort most... Those memories are now the most precious things I own.</p>
+
+                <div class="memory">
+                    "You taught me that love doesn't need words. A soft nuzzle, a tiny paw touch, or just hopping around happily was enough to fill my heart with so much warmth."
+                </div>
+
+                <p>I know you're in bunny heaven now, eating the best clover, enjoying endless sunshine, and being as adorable as ever. But oh, how I miss you both so much. The world is a little less fluffy, a little less joyful without you here.</p>
+
+                <div class="quote">"Thank you for all the love, all the cuddles, and all the happiness you brought into my life."</div>
+
+                <p>You will forever be loved, forever be remembered, and forever be in my heart. Sweet Melon and Musk, you were the best little bunnies anyone could ask for.</p>
+
+                <p>Forever your human, with endless love and happy tears. 💕🐰</p>
+            </div>
+
+            <div class="closing">
+                🌸 Rest in the softest fields of heaven 🌸<br>
+                💕 You will always be my little angels 💕
+            </div>
+
+            <div class="nav-buttons">
+                <a href="page3.html" class="back-btn">← Back</a>
+                <a href="page5.html" class="next-btn">My Poetry →</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '💕';
+            heart.style.position = 'fixed';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.top = '-20px';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            heart.style.opacity = '0.6';
+            heart.style.pointerEvents = 'none';
+            heart.style.animation = `fall ${Math.random() * 3 + 3}s infinite`;
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 4000);
+        }
+
+        setInterval(createHeart, 800);
+    </script>
+</body>
+</html>
