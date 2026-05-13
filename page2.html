@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Know</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            background: linear-gradient(135deg, #2a2a3e 0%, #1a1a2e 100%);
+            height: 100vh;
+        }
+
+        .page {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Rain Particles */
+        .rain-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .raindrop {
+            position: absolute;
+            width: 2px;
+            height: 15px;
+            background: linear-gradient(to bottom, rgba(200, 200, 255, 0.8), transparent);
+            animation: fall 1s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Cute Bunny Corner */
+        .bunny {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            font-size: 70px;
+            animation: gentle-sway 4s ease-in-out infinite;
+        }
+
+        @keyframes gentle-sway {
+            0%, 100% {
+                transform: translateX(0) translateY(0);
+            }
+            50% {
+                transform: translateX(10px) translateY(-10px);
+            }
+        }
+
+        /* Main Content */
+        .content {
+            text-align: center;
+            z-index: 10;
+            max-width: 800px;
+            animation: fade-in 1.5s ease-out;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .emotional-text {
+            font-size: 2.5rem;
+            color: #e8b4d4;
+            font-weight: 300;
+            line-height: 1.6;
+            letter-spacing: 1px;
+            margin-bottom: 80px;
+            animation: text-fade 2.5s ease-out;
+        }
+
+        @keyframes text-fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .emotional-text::after {
+            content: '';
+            display: inline-block;
+            width: 2px;
+            height: 2rem;
+            background: #e8b4d4;
+            margin-left: 8px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% {
+                opacity: 1;
+            }
+            51%, 99% {
+                opacity: 0;
+            }
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 35px;
+            font-size: 1rem;
+            border: 2px solid #e8b4d4;
+            background: transparent;
+            color: #e8b4d4;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background: rgba(232, 180, 212, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(232, 180, 212, 0.2);
+        }
+
+        .btn-back {
+            border-color: #888;
+            color: #888;
+        }
+
+        .btn-back:hover {
+            background: rgba(136, 136, 136, 0.1);
+            box-shadow: 0 8px 25px rgba(136, 136, 136, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="rain-container" id="rainContainer"></div>
+        
+        <div class="content">
+            <div class="emotional-text">I know I hurt you…</div>
+            <div class="nav-buttons">
+                <a href="index.html" class="btn btn-back">Back</a>
+                <a href="page3.html" class="btn">Next</a>
+            </div>
+        </div>
+
+        <div class="bunny">🐰</div>
+    </div>
+
+    <script>
+        // Generate rain particles
+        function createRaindrop() {
+            const raindrop = document.createElement('div');
+            raindrop.classList.add('raindrop');
+            
+            const randomX = Math.random() * window.innerWidth;
+            const randomDelay = Math.random() * 1;
+            const duration = 0.8 + Math.random() * 0.4;
+            
+            raindrop.style.left = randomX + 'px';
+            raindrop.style.top = '-20px';
+            raindrop.style.animationDuration = duration + 's';
+            raindrop.style.animationDelay = randomDelay + 's';
+            
+            document.getElementById('rainContainer').appendChild(raindrop);
+            
+            setTimeout(() => raindrop.remove(), (duration + randomDelay) * 1000);
+        }
+
+        // Create rain at intervals
+        setInterval(createRaindrop, 100);
+        
+        // Create initial rain
+        for (let i = 0; i < 20; i++) {
+            setTimeout(() => createRaindrop(), i * 50);
+        }
+    </script>
+</body>
+</html>
