@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Poetry 📝✨</title>
+    <title>Her Poetry 📝✨</title>
     <style>
         * {
             margin: 0;
@@ -11,18 +11,19 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background: linear-gradient(-45deg, #0f0f2e, #1a1a4d, #2d2d5f, #1a0033);
             background-size: 400% 400%;
             font-family: 'Georgia', serif;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
             animation: gradientShift 15s ease infinite;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         @keyframes gradientShift {
@@ -40,9 +41,7 @@
             height: 100%;
             background-image: 
                 radial-gradient(2px 2px at 10px 20px, #ff4d94, rgba(255, 77, 148, 0.2)),
-                radial-gradient(2px 2px at 40px 70px, #ff4d94, rgba(255, 77, 148, 0.2)),
-                radial-gradient(1px 1px at 90px 90px, #ff69b4, rgba(255, 105, 180, 0.2)),
-                radial-gradient(1px 1px at 130px 80px, #ff69b4, rgba(255, 105, 180, 0.2));
+                radial-gradient(2px 2px at 40px 70px, #ff4d94, rgba(255, 77, 148, 0.2));
             background-size: 200px 200px;
             animation: particleFloat 20s linear infinite;
             opacity: 0.4;
@@ -55,11 +54,65 @@
             100% { transform: translateY(-100vh) translateX(50px); }
         }
 
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            position: relative;
+            z-index: 10;
+        }
+
+        .side-images-left {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            padding-top: 60px;
+            padding-right: 20px;
+            align-items: flex-end;
+        }
+
+        .side-images-right {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            padding-top: 180px;
+            padding-left: 20px;
+            align-items: flex-start;
+        }
+
+        .side-image {
+            width: 90px;
+            height: 90px;
+            border-radius: 15px;
+            border: 3px solid #ff4d94;
+            object-fit: cover;
+            box-shadow: 0 8px 25px rgba(255, 77, 148, 0.5);
+            opacity: 0.9;
+            transition: all 0.4s ease;
+            animation: imageFloat 4s ease-in-out infinite;
+        }
+
+        .side-image:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(255, 77, 148, 0.8);
+        }
+
+        .side-image-1 { animation-delay: 0s; }
+        .side-image-2 { animation-delay: 0.3s; }
+        .side-image-3 { animation-delay: 0.6s; }
+        .side-image-4 { animation-delay: 0.9s; }
+        .side-image-5 { animation-delay: 1.2s; }
+
+        @keyframes imageFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
         .container {
-            max-width: 750px;
-            background: rgba(20, 10, 40, 0.85);
+            max-width: 800px;
+            background: rgba(20, 10, 40, 0.88);
             border-radius: 30px;
-            padding: 60px 50px;
+            padding: 70px 60px;
             box-shadow: 
                 0 0 60px rgba(255, 77, 148, 0.4),
                 0 0 30px rgba(138, 43, 226, 0.3),
@@ -186,7 +239,7 @@
             margin: 50px 0;
             text-align: center;
             animation: sectionFadeIn 1.5s ease-out;
-            padding: 40px 30px;
+            padding: 45px 35px;
             background: rgba(255, 77, 148, 0.08);
             border-radius: 20px;
             border: 1px solid rgba(255, 77, 148, 0.2);
@@ -230,7 +283,7 @@
         }
 
         .poem-title {
-            font-size: 1.9em;
+            font-size: 1.95em;
             background: linear-gradient(135deg, #ff69b4, #ff4d94);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -244,7 +297,7 @@
 
         .poem-text {
             color: #e0b0ff;
-            line-height: 2.2;
+            line-height: 2.3;
             font-size: 1.15em;
             margin: 20px 0;
             white-space: pre-wrap;
@@ -259,7 +312,7 @@
         }
 
         .poem-divider {
-            margin: 40px 0;
+            margin: 45px 0;
             text-align: center;
             font-size: 1.8em;
             letter-spacing: 20px;
@@ -276,19 +329,19 @@
 
         .emotional-quote {
             background: linear-gradient(135deg, rgba(255, 77, 148, 0.15), rgba(138, 43, 226, 0.15));
-            padding: 35px 30px;
+            padding: 40px 35px;
             border-radius: 20px;
             border-left: 5px solid #ff4d94;
             border-right: 5px solid rgba(138, 43, 226, 0.6);
-            margin: 40px 0;
+            margin: 45px 0;
             font-style: italic;
             color: #ff99cc;
-            font-size: 1.25em;
+            font-size: 1.3em;
             box-shadow: 
                 0 0 30px rgba(255, 77, 148, 0.2),
                 inset 0 0 20px rgba(255, 77, 148, 0.1);
             backdrop-filter: blur(5px);
-            line-height: 1.8;
+            line-height: 2;
             font-weight: 500;
             letter-spacing: 1px;
             position: relative;
@@ -379,6 +432,31 @@
             border-color: #6a0dad;
         }
 
+        @media (max-width: 900px) {
+            .side-images-left,
+            .side-images-right {
+                display: none;
+            }
+
+            .container {
+                padding: 50px 40px;
+                max-width: 100%;
+            }
+
+            .title {
+                font-size: 2.4em;
+            }
+
+            .poem-section {
+                padding: 30px 20px;
+            }
+
+            .poem-text {
+                font-size: 1.05em;
+                line-height: 2;
+            }
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 10px;
@@ -390,7 +468,7 @@
             }
 
             .title {
-                font-size: 2.2em;
+                font-size: 2em;
                 letter-spacing: 1px;
             }
 
@@ -399,7 +477,7 @@
             }
 
             .poem-section {
-                padding: 25px 15px;
+                padding: 20px 15px;
                 margin: 30px 0;
             }
 
@@ -409,7 +487,7 @@
 
             .poem-text {
                 font-size: 0.95em;
-                line-height: 2;
+                line-height: 1.9;
             }
 
             .emotional-quote {
@@ -436,19 +514,28 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="decorative-element decoration-top-left">✨</div>
-        <div class="decorative-element decoration-bottom-right">💫</div>
+    <div class="wrapper">
+        <div class="side-images-left">
+            <img src="her.jpg" alt="Her" class="side-image side-image-1" onerror="this.style.display='none';" />
+            <img src="her2.jpg" alt="Her" class="side-image side-image-2" onerror="this.style.display='none';" />
+            <img src="her4.jpg" alt="Her" class="side-image side-image-3" onerror="this.style.display='none';" />
+            <img src="her6.jpg" alt="Her" class="side-image side-image-4" onerror="this.style.display='none';" />
+            <img src="her8.jpg" alt="Her" class="side-image side-image-5" onerror="this.style.display='none';" />
+        </div>
 
-        <div class="content">
-            <div class="header">
-                <div class="title">📝 My Poetry 📝</div>
-                <div class="subtitle">Words From The Heart</div>
-            </div>
+        <div class="container">
+            <div class="decorative-element decoration-top-left">✨</div>
+            <div class="decorative-element decoration-bottom-right">💫</div>
 
-            <div class="poem-section">
-                <div class="poem-title">Baatein To Bahut Hai Kehne Ko</div>
-                <div class="poem-text">Baatein To Bahut Hai Kehne Ko..
+            <div class="content">
+                <div class="header">
+                    <div class="title">📝 My Poetry 📝</div>
+                    <div class="subtitle">Words From The Heart</div>
+                </div>
+
+                <div class="poem-section">
+                    <div class="poem-title">Baatein To Bahut Hai Kehne Ko</div>
+                    <div class="poem-text">Baatein To Bahut Hai Kehne Ko..
 Magar Har Baat Jo Mai Kahunga Tumse..
 Tum Maan Logi Kya..?
 
@@ -465,13 +552,13 @@ Ki Duniya Bhar Ke Liye Mai Patthar Sa Hoo,
 Magar Tumhare Aage Mai Kaanch Ho Jaata Hu..
 Aur Mere Ye Aansu Bas Tumhare Liye Behte Hai..
 Toh Tum Maan Logi Kya..?</div>
-            </div>
+                </div>
 
-            <div class="poem-divider">✨ 💕 ✨</div>
+                <div class="poem-divider">✨ 💕 ✨</div>
 
-            <div class="poem-section">
-                <div class="poem-title">Meri Kamoshiyon Mein Daba Raha Hu</div>
-                <div class="poem-text">Aur Yu, Toh Ab Mai Tumse Baatein Bahut Kam Karne Laga Hu, Aur Tumhe To Lagta Bhii Hoga..
+                <div class="poem-section">
+                    <div class="poem-title">Meri Kamoshiyon Mein Daba Raha Hu</div>
+                    <div class="poem-text">Aur Yu, Toh Ab Mai Tumse Baatein Bahut Kam Karne Laga Hu, Aur Tumhe To Lagta Bhii Hoga..
 Ki Pal Bhar Ka Pyar Tha, Pal Bhar Mai Badal Gaya..
 
 Magar Agar Mai Kahu, Ki Mai To Bas Tumhari Baatein Sunna Chahta Hu Zindagi Bhar,
@@ -485,17 +572,17 @@ To Tum Maan Logi Kya..?
 Log Yaha Tak Kehne Lage Hai, Ki ab pehele se kaafi badal sa gaya hoon maain, 
 Par Mai Kahu, Ki ye badlav bhi tumhare aane ke baad hua hai,
 Toh Tum Maan logi kya..?</div>
-            </div>
+                </div>
 
-            <div class="emotional-quote">
-                "Hosh Me Toh Mai Bas Tumhe Dhundata Hu Na, Magar Ye Sab Kahunga Kabhi Tumse, Toh Tum Maan Logii Kya..?"
-            </div>
+                <div class="emotional-quote">
+                    "Hosh Me Toh Mai Bas Tumhe Dhundata Hu Na, Magar Ye Sab Kahunga Kabhi Tumse, Toh Tum Maan Logii Kya..?"
+                </div>
 
-            <div class="poem-divider">💫 🌸 💫</div>
+                <div class="poem-divider">💫 🌸 💫</div>
 
-            <div class="poem-section">
-                <div class="poem-title">Tum Meri Duniya Ho</div>
-                <div class="poem-text">Aur Kahi Na Kahi, Mai Apni Bhavnaoo Ke Shor Ko Apni Kamoshiyon Me Daba Raha Hu,
+                <div class="poem-section">
+                    <div class="poem-title">Tum Meri Duniya Ho</div>
+                    <div class="poem-text">Aur Kahi Na Kahi, Mai Apni Bhavnaoo Ke Shor Ko Apni Kamoshiyon Me Daba Raha Hu,
 Lekin Agar Meri Aankhon Me Chipa Shor Tumse Kabhi Kahe, Ki Tum Meri Duniya,
 Mera Chaand, Mera Ishq Ho..
 Toh Tum Maan Logi Kya..?
@@ -509,12 +596,20 @@ Magar Har Baat Jo Mai Kahunga.. Tumse..
 Tum Maan Logii Kya..?
 
 Bolo.. Chup Kyu Ho..?</div>
-            </div>
+                </div>
 
-            <div class="nav-buttons">
-                <a href="page4.html" class="back-btn">← Back to Melon & Musk</a>
-                <a href="index.html" class="end-btn">Begin Again →</a>
+                <div class="nav-buttons">
+                    <a href="page4.html" class="back-btn">← Back to Melon & Musk</a>
+                    <a href="index.html" class="end-btn">Begin Again →</a>
+                </div>
             </div>
+        </div>
+
+        <div class="side-images-right">
+            <img src="her1.jpg" alt="Her" class="side-image side-image-1" onerror="this.style.display='none';" />
+            <img src="her3.jpg" alt="Her" class="side-image side-image-2" onerror="this.style.display='none';" />
+            <img src="her5.jpg" alt="Her" class="side-image side-image-3" onerror="this.style.display='none';" />
+            <img src="her7.jpg" alt="Her" class="side-image side-image-4" onerror="this.style.display='none';" />
         </div>
     </div>
 </body>
