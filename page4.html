@@ -22,101 +22,142 @@
         }
 
         .container {
-            max-width: 600px;
-            background: rgba(255, 255, 255, 0.95);
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.98);
             border-radius: 30px;
-            padding: 40px;
+            padding: 50px 45px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
             border: 3px solid #ff7675;
             position: relative;
             overflow: visible;
         }
 
-        .rabbit-top-left {
+        /* Rabbit image positions */
+        .rabbit-img-top-left {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: rgba(255, 182, 193, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0.8;
-            animation: float1 3s ease-in-out infinite;
-        }
-
-        .rabbit-top-right {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-            background: rgba(255, 182, 193, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0.8;
-            animation: float2 3.5s ease-in-out infinite;
-        }
-
-        .rabbit-bottom-left {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: rgba(255, 182, 193, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0.8;
-            animation: float3 4s ease-in-out infinite;
-        }
-
-        .rabbit-bottom-right {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            width: 85px;
-            height: 85px;
-            border-radius: 50%;
-            background: rgba(255, 182, 193, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0.8;
-            animation: float4 3.2s ease-in-out infinite;
-        }
-
-        .rabbit-img {
-            width: 100%;
-            height: 100%;
+            top: -40px;
+            left: 20px;
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            border: 4px solid #ff7675;
+            background: white;
             object-fit: cover;
-            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(255, 118, 117, 0.4);
+            animation: floatIn1 1s ease-out;
+            z-index: 5;
+        }
+
+        .rabbit-img-top-right {
+            position: absolute;
+            top: -35px;
+            right: 20px;
+            width: 110px;
+            height: 110px;
+            border-radius: 20px;
+            border: 4px solid #ff7675;
+            background: white;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(255, 118, 117, 0.4);
+            animation: floatIn2 1.2s ease-out;
+            z-index: 5;
+        }
+
+        .rabbit-img-left {
+            position: absolute;
+            top: 50%;
+            left: -50px;
+            width: 100px;
+            height: 100px;
+            border-radius: 15px;
+            border: 4px solid #ff7675;
+            background: white;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(255, 118, 117, 0.4);
+            transform: translateY(-50%);
+            animation: floatIn3 1.4s ease-out;
+            z-index: 5;
+        }
+
+        .rabbit-img-right {
+            position: absolute;
+            bottom: 40px;
+            right: -40px;
+            width: 110px;
+            height: 110px;
+            border-radius: 20px;
+            border: 4px solid #ff7675;
+            background: white;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(255, 118, 117, 0.4);
+            animation: floatIn4 1.6s ease-out;
+            z-index: 5;
+        }
+
+        .rabbit-img-bottom {
+            position: absolute;
+            bottom: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            border: 4px solid #ff7675;
+            background: white;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(255, 118, 117, 0.4);
+            animation: floatIn5 1.8s ease-out;
+            z-index: 5;
+        }
+
+        @keyframes floatIn1 {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatIn2 {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatIn3 {
+            from { opacity: 0; transform: translateX(-50px) translateY(-50%); }
+            to { opacity: 1; transform: translateX(0) translateY(-50%); }
+        }
+
+        @keyframes floatIn4 {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes floatIn5 {
+            from { opacity: 0; transform: translateX(-50%) translateY(50px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
         }
 
         @keyframes float1 {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-15px); }
         }
 
         @keyframes float2 {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
+            50% { transform: translateY(-18px); }
         }
 
         @keyframes float3 {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
+            50% { transform: translateY(-12px); }
         }
 
         @keyframes float4 {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes float5 {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-16px); }
         }
 
         @keyframes fall {
@@ -137,86 +178,101 @@
         }
 
         .header {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            font-size: 2.8em;
+            margin-bottom: 10px;
             background: linear-gradient(135deg, #ff7675, #fab1a0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: bold;
-        }
-
-        .names {
-            font-size: 1.8em;
-            color: #d63031;
-            margin-bottom: 15px;
-            font-weight: 600;
             letter-spacing: 2px;
         }
 
+        .names {
+            font-size: 2em;
+            color: #d63031;
+            margin-bottom: 5px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .subtitle {
+            font-size: 1em;
+            color: #636e72;
+            margin-bottom: 25px;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
         .emoji-divider {
-            font-size: 1.5em;
-            margin: 20px 0;
-            letter-spacing: 10px;
+            font-size: 1.8em;
+            margin: 25px 0;
+            letter-spacing: 15px;
         }
 
         .letter {
             color: #2d3436;
-            line-height: 1.8;
-            font-size: 1.05em;
-            text-align: left;
-            margin: 20px 0;
-            letter-spacing: 0.5px;
+            line-height: 2;
+            font-size: 1.1em;
+            text-align: justify;
+            margin: 25px 0;
+            letter-spacing: 0.7px;
         }
 
         .letter p {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
         }
 
         .memory {
-            background: linear-gradient(135deg, rgba(255, 182, 193, 0.2), rgba(255, 218, 185, 0.2));
-            padding: 15px;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(255, 218, 185, 0.3));
+            padding: 20px;
             border-radius: 15px;
-            margin: 15px 0;
-            border-left: 4px solid #ff7675;
+            margin: 20px 0;
+            border-left: 5px solid #ff7675;
+            border-right: 5px solid #fab1a0;
             font-style: italic;
-            color: #636e72;
+            color: #d63031;
+            line-height: 1.9;
+            font-weight: 500;
         }
 
         .quote {
-            font-size: 1.2em;
+            font-size: 1.3em;
             color: #d63031;
-            font-weight: 500;
-            margin: 20px 0;
+            font-weight: 700;
+            margin: 25px 0;
             font-style: italic;
+            letter-spacing: 1px;
         }
 
         .closing {
             margin-top: 30px;
-            font-size: 1.1em;
+            font-size: 1.15em;
             color: #2d3436;
-            font-weight: 500;
+            font-weight: 600;
+            line-height: 2;
         }
 
         .nav-buttons {
             display: flex;
             justify-content: space-between;
             margin-top: 40px;
-            gap: 10px;
+            gap: 15px;
             position: relative;
             z-index: 20;
         }
 
         .nav-buttons a {
             flex: 1;
-            padding: 12px;
+            padding: 14px;
             text-decoration: none;
             border-radius: 15px;
-            font-weight: 600;
+            font-weight: 700;
             text-align: center;
             transition: all 0.3s ease;
             color: white;
-            font-size: 1em;
+            font-size: 1.05em;
+            letter-spacing: 1px;
         }
 
         .back-btn {
@@ -224,8 +280,8 @@
         }
 
         .back-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(74, 185, 255, 0.3);
+            transform: scale(1.08);
+            box-shadow: 0 10px 25px rgba(74, 185, 255, 0.4);
         }
 
         .next-btn {
@@ -233,105 +289,93 @@
         }
 
         .next-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(255, 118, 117, 0.3);
+            transform: scale(1.08);
+            box-shadow: 0 10px 25px rgba(255, 118, 117, 0.4);
         }
 
         @media (max-width: 600px) {
             .container {
-                padding: 25px;
+                padding: 30px 20px;
+            }
+
+            .rabbit-img-top-left,
+            .rabbit-img-top-right,
+            .rabbit-img-left,
+            .rabbit-img-right,
+            .rabbit-img-bottom {
+                display: none;
             }
 
             .header {
-                font-size: 1.8em;
+                font-size: 2em;
             }
 
             .names {
-                font-size: 1.3em;
+                font-size: 1.5em;
             }
 
             .letter {
-                font-size: 0.95em;
-            }
-
-            .rabbit-top-left {
-                width: 60px;
-                height: 60px;
-            }
-
-            .rabbit-top-right {
-                width: 55px;
-                height: 55px;
-            }
-
-            .rabbit-bottom-left {
-                width: 50px;
-                height: 50px;
-            }
-
-            .rabbit-bottom-right {
-                width: 65px;
-                height: 65px;
+                font-size: 1em;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="rabbit-top-left">
-            <img src="rabbit.jpg" alt="Melon" class="rabbit-img" onerror="this.style.display='none';" />
-        </div>
-
-        <div class="rabbit-top-right">
-            <img src="rabbit.jpg" alt="Musk" class="rabbit-img" onerror="this.style.display='none';" />
-        </div>
-
-        <div class="rabbit-bottom-left">
-            <img src="rabbit.jpg" alt="Melon & Musk" class="rabbit-img" onerror="this.style.display='none';" />
-        </div>
-
-        <div class="rabbit-bottom-right">
-            <img src="rabbit.jpg" alt="Forever loved" class="rabbit-img" onerror="this.style.display='none';" />
-        </div>
+        <img src="rabbit.jpg" alt="Melon" class="rabbit-img-top-left" onerror="this.style.display='none';" />
+        <img src="rabbit.jpg" alt="Musk" class="rabbit-img-top-right" onerror="this.style.display='none';" />
+        <img src="rabbit.jpg" alt="Our love" class="rabbit-img-left" onerror="this.style.display='none';" />
+        <img src="rabbit.jpg" alt="Forever" class="rabbit-img-right" onerror="this.style.display='none';" />
+        <img src="rabbit.jpg" alt="In our hearts" class="rabbit-img-bottom" onerror="this.style.display='none';" />
 
         <div class="content">
             <div class="header">🐰 For My Sweet Bunnies 🐰</div>
             <div class="names">Melon & Musk</div>
+            <div class="subtitle">~ Her beloved companions ~</div>
             
             <div class="emoji-divider">💕 🌸 ✨ 💕</div>
 
             <div class="letter">
                 <p>Oh my precious little ones,</p>
                 
-                <p>I don't even know where to begin... The silence without your soft fur, your tiny hops, and those adorable wiggly noses is almost unbearable. You two were more than just pets—you were pure joy wrapped in fur and love.</p>
+                <p>I don't even know where to begin... The silence without your soft fur, your tiny hops, and those adorable wiggly noses is almost unbearable. You two were more than just pets—you were her joy, her comfort, her everything.</p>
 
                 <div class="memory">
-                    "Melon, with your sweet personality and those cute little hops... Musk, with your feisty spirit and playful energy... Together, you were perfection."
+                    "Melon, with your sweet personality and those cute little hops... Musk, with your feisty spirit and playful energy... Together, you were perfection. You were HER rabbits, and she loved you more than anything in this world."
                 </div>
 
-                <p>Every moment with you was a treasure I didn't realize I was collecting until it was too late. The way you'd both come running when you heard my voice, how you'd cuddle close when I needed comfort most... Those memories are now the most precious things I own.</p>
+                <p>Every moment with you was a treasure she didn't realize she was collecting until it was too late. The way you'd both come running when you heard her voice, how you'd cuddle close when she was sad, the soft thumping of your back legs when you were happy... those memories are forever etched in her heart.</p>
+
+                <p>She would watch you hop around for hours, finding happiness in your innocent little games. When she held you close, all her worries would fade away. You were her safe place, her reason to smile even on the darkest days.</p>
 
                 <div class="memory">
-                    "You taught me that love doesn't need words. A soft nuzzle, a tiny paw touch, or just hopping around happily was enough to fill my heart with so much warmth."
+                    "You taught her that love doesn't need words. A soft nuzzle, a tiny paw touch, or just hopping around happily was enough to fill her heart with so much warmth. She felt your love in every little gesture."
                 </div>
 
-                <p>I know you're in bunny heaven now, eating the best clover, enjoying endless sunshine, and being as adorable as ever. But oh, how I miss you both so much. The world is a little less fluffy, a little less joyful without you here.</p>
+                <p>Sweet Melon and Musk, you brought so much light into her life. The way you ate your favorite treats, how you'd binky with pure joy, the funny little sounds you'd make... these moments are treasured forever. She saw innocence, purity, and unconditional love in your eyes.</p>
 
-                <div class="quote">"Thank you for all the love, all the cuddles, and all the happiness you brought into my life."</div>
+                <p>I know you're in bunny heaven now, eating the best clover, enjoying endless sunshine, running through fields of the softest grass, and being as adorable as ever. But oh, how she misses you both so much. The world is a little less bright without your presence.</p>
 
-                <p>You will forever be loved, forever be remembered, and forever be in my heart. Sweet Melon and Musk, you were the best little bunnies anyone could ask for.</p>
+                <p>Every time she sees something that reminds her of you—a pair of floppy ears, a twitching nose, the color pink—her eyes fill with tears. Not tears of sadness alone, but tears of gratitude for having been blessed with your love for however long she had you.</p>
 
-                <p>Forever your human, with endless love and happy tears. 💕🐰</p>
+                <div class="quote">"Thank you for all the love, all the cuddles, all the laughter, and all the happiness you brought into her life. Thank you for being the sweetest little angels."</div>
+
+                <p>You will forever be loved, forever be remembered, and forever be in her heart. Sweet Melon and Musk, you were the best little bunnies anyone could ask for. You were HER bunnies, and she will carry your love with her always.</p>
+
+                <p>Forever your human, with endless love, happy tears, and a heart full of memories. 💕🐰</p>
+
+                <p>Rest in the softest fields of heaven, my sweet little ones. You will always be her angels. 🌸✨</p>
             </div>
 
             <div class="closing">
                 🌸 Rest in the softest fields of heaven 🌸<br>
-                💕 You will always be my little angels 💕
+                💕 You will always be her little angels 💕<br>
+                🐰 Melon & Musk, forever loved 🐰
             </div>
 
             <div class="nav-buttons">
                 <a href="page3.html" class="back-btn">← Back</a>
-                <a href="page5.html" class="next-btn">My Poetry →</a>
+                <a href="page5.html" class="next-btn">Her Poetry →</a>
             </div>
         </div>
     </div>
@@ -343,8 +387,8 @@
             heart.style.position = 'fixed';
             heart.style.left = Math.random() * 100 + '%';
             heart.style.top = '-20px';
-            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
-            heart.style.opacity = '0.6';
+            heart.style.fontSize = (Math.random() * 20 + 12) + 'px';
+            heart.style.opacity = '0.7';
             heart.style.pointerEvents = 'none';
             heart.style.zIndex = '1';
             const duration = Math.random() * 3 + 3;
