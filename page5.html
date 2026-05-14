@@ -60,12 +60,13 @@
             min-height: 100vh;
             position: relative;
             z-index: 10;
+            gap: 20px;
         }
 
         .side-images-left {
             display: flex;
             flex-direction: column;
-            gap: 60px;
+            gap: 70px;
             padding-top: 60px;
             padding-right: 20px;
             align-items: flex-end;
@@ -74,15 +75,15 @@
         .side-images-right {
             display: flex;
             flex-direction: column;
-            gap: 60px;
+            gap: 70px;
             padding-top: 180px;
             padding-left: 20px;
             align-items: flex-start;
         }
 
         .side-image {
-            width: 90px;
-            height: 90px;
+            width: 95px;
+            height: 95px;
             border-radius: 15px;
             border: 3px solid #ff4d94;
             object-fit: cover;
@@ -432,28 +433,18 @@
             border-color: #6a0dad;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
             .side-images-left,
             .side-images-right {
                 display: none;
             }
 
+            .wrapper {
+                justify-content: center;
+            }
+
             .container {
-                padding: 50px 40px;
                 max-width: 100%;
-            }
-
-            .title {
-                font-size: 2.4em;
-            }
-
-            .poem-section {
-                padding: 30px 20px;
-            }
-
-            .poem-text {
-                font-size: 1.05em;
-                line-height: 2;
             }
         }
 
@@ -516,11 +507,11 @@
 <body>
     <div class="wrapper">
         <div class="side-images-left">
-            <img src="her.jpg" alt="Her" class="side-image side-image-1" onerror="this.style.display='none';" />
-            <img src="her2.jpg" alt="Her" class="side-image side-image-2" onerror="this.style.display='none';" />
-            <img src="her4.jpg" alt="Her" class="side-image side-image-3" onerror="this.style.display='none';" />
-            <img src="her6.jpg" alt="Her" class="side-image side-image-4" onerror="this.style.display='none';" />
-            <img src="her8.jpg" alt="Her" class="side-image side-image-5" onerror="this.style.display='none';" />
+            <img src="her.jpg.jpeg" alt="Her" class="side-image side-image-1" onerror="this.style.display='none';" />
+            <img src="her2.jpg.jpeg" alt="Her" class="side-image side-image-2" onerror="this.style.display='none';" />
+            <img src="her4.jpg.jpeg" alt="Her" class="side-image side-image-3" onerror="this.style.display='none';" />
+            <img src="her6.jpg.jpeg" alt="Her" class="side-image side-image-4" onerror="this.style.display='none';" />
+            <img src="her8.jpg.jpeg" alt="Her" class="side-image side-image-5" onerror="this.style.display='none';" />
         </div>
 
         <div class="container">
@@ -606,10 +597,10 @@ Bolo.. Chup Kyu Ho..?</div>
         </div>
 
         <div class="side-images-right">
-            <img src="her1.jpg" alt="Her" class="side-image side-image-1" onerror="this.style.display='none';" />
-            <img src="her3.jpg" alt="Her" class="side-image side-image-2" onerror="this.style.display='none';" />
-            <img src="her5.jpg" alt="Her" class="side-image side-image-3" onerror="this.style.display='none';" />
-            <img src="her7.jpg" alt="Her" class="side-image side-image-4" onerror="this.style.display='none';" />
+            <img src="her1.jpg.jpeg" alt="Her" class="side-image side-image-1" onerror="this.style.display='none';" />
+            <img src="her3.jpg.jpeg" alt="Her" class="side-image side-image-2" onerror="this.style.display='none';" />
+            <img src="her5.jpg.jpeg" alt="Her" class="side-image side-image-3" onerror="this.style.display='none';" />
+            <img src="her7.jpg.jpeg" alt="Her" class="side-image side-image-4" onerror="this.style.display='none';" />
         </div>
     </div>
 </body>
