@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Her Poetry 📝✨</title>
+    <title>Her Poetry 📝💕</title>
     <style>
         * {
             margin: 0;
@@ -16,11 +16,11 @@
         }
 
         body {
-            background: linear-gradient(-45deg, #0f0f2e, #1a1a4d, #2d2d5f, #1a0033);
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 25%, #f8b195 50%, #ff7675 75%, #ffeaa7 100%);
             background-size: 400% 400%;
             font-family: 'Georgia', serif;
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
             animation: gradientShift 15s ease infinite;
             position: relative;
             overflow-x: hidden;
@@ -40,11 +40,11 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(2px 2px at 10px 20px, #ff4d94, rgba(255, 77, 148, 0.2)),
-                radial-gradient(2px 2px at 40px 70px, #ff4d94, rgba(255, 77, 148, 0.2));
+                radial-gradient(2px 2px at 10px 20px, #ff4d94, rgba(255, 77, 148, 0.15)),
+                radial-gradient(2px 2px at 40px 70px, #ff4d94, rgba(255, 77, 148, 0.15));
             background-size: 200px 200px;
             animation: particleFloat 20s linear infinite;
-            opacity: 0.4;
+            opacity: 0.3;
             pointer-events: none;
             z-index: 1;
         }
@@ -54,75 +54,21 @@
             100% { transform: translateY(-100vh) translateX(50px); }
         }
 
-        .wrapper {
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-            position: relative;
-            z-index: 10;
-            gap: 20px;
-        }
-
-        .side-images-left {
-            display: flex;
-            flex-direction: column;
-            gap: 70px;
-            padding-top: 60px;
-            padding-right: 20px;
-            align-items: flex-end;
-        }
-
-        .side-images-right {
-            display: flex;
-            flex-direction: column;
-            gap: 70px;
-            padding-top: 180px;
-            padding-left: 20px;
-            align-items: flex-start;
-        }
-
-        .side-image {
-            width: 95px;
-            height: 95px;
-            border-radius: 15px;
-            border: 3px solid #ff4d94;
-            object-fit: cover;
-            box-shadow: 0 8px 25px rgba(255, 77, 148, 0.5);
-            opacity: 0.9;
-            transition: all 0.4s ease;
-            animation: imageFloat 4s ease-in-out infinite;
-        }
-
-        .side-image:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 35px rgba(255, 77, 148, 0.8);
-        }
-
-        .side-image-1 { animation-delay: 0s; }
-        .side-image-2 { animation-delay: 0.3s; }
-        .side-image-3 { animation-delay: 0.6s; }
-        .side-image-4 { animation-delay: 0.9s; }
-        .side-image-5 { animation-delay: 1.2s; }
-
-        @keyframes imageFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-
         .container {
-            max-width: 800px;
-            background: rgba(20, 10, 40, 0.88);
-            border-radius: 30px;
-            padding: 70px 60px;
+            max-width: 95vw;
+            width: 100%;
+            background: rgba(255, 240, 245, 0.95);
+            border-radius: 25px;
+            padding: 50px 25px;
             box-shadow: 
-                0 0 60px rgba(255, 77, 148, 0.4),
-                0 0 30px rgba(138, 43, 226, 0.3),
-                inset 0 0 40px rgba(255, 77, 148, 0.1);
-            border: 2px solid rgba(255, 77, 148, 0.6);
+                0 15px 50px rgba(255, 107, 157, 0.3),
+                0 0 30px rgba(196, 69, 105, 0.2);
+            border: 2px solid #ff6b9d;
             position: relative;
             overflow: hidden;
             z-index: 10;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
+            margin: 20px auto;
         }
 
         .container::before {
@@ -132,7 +78,7 @@
             right: -50%;
             width: 300px;
             height: 300px;
-            background: radial-gradient(circle, rgba(255, 77, 148, 0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 107, 157, 0.2) 0%, transparent 70%);
             border-radius: 50%;
             animation: glow 8s ease-in-out infinite;
             z-index: 0;
@@ -145,42 +91,15 @@
             left: -30%;
             width: 250px;
             height: 250px;
-            background: radial-gradient(circle, rgba(138, 43, 226, 0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(196, 69, 105, 0.2) 0%, transparent 70%);
             border-radius: 50%;
             animation: glow 10s ease-in-out infinite reverse;
             z-index: 0;
         }
 
         @keyframes glow {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 0.8; }
-        }
-
-        .decorative-element {
-            position: absolute;
-            opacity: 0.15;
-            font-size: 120px;
-            z-index: 1;
-            filter: drop-shadow(0 0 20px rgba(255, 77, 148, 0.4));
-        }
-
-        .decoration-top-left {
-            top: -30px;
-            left: -30px;
-            transform: rotate(-15deg);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .decoration-bottom-right {
-            bottom: -40px;
-            right: -40px;
-            transform: rotate(20deg);
-            animation: float 7s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(-15deg); }
-            50% { transform: translateY(-20px) rotate(-15deg); }
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.2); opacity: 0.7; }
         }
 
         .content {
@@ -190,9 +109,9 @@
 
         .header {
             text-align: center;
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            border-bottom: 2px solid rgba(255, 77, 148, 0.5);
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid #ff6b9d;
             position: relative;
         }
 
@@ -202,74 +121,56 @@
             bottom: -2px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #ff4d94, transparent);
-            box-shadow: 0 0 20px #ff4d94;
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff6b9d, transparent);
+            box-shadow: 0 0 15px #ff6b9d;
         }
 
         .title {
-            font-size: 3.2em;
-            background: linear-gradient(135deg, #ff4d94, #ff69b4, #ff1493);
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #ff6b9d, #c44569, #f8b195);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: 900;
-            margin-bottom: 15px;
-            letter-spacing: 3px;
-            text-shadow: 0 0 30px rgba(255, 77, 148, 0.3);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
             animation: titlePulse 3s ease-in-out infinite;
         }
 
         @keyframes titlePulse {
-            0%, 100% { filter: drop-shadow(0 0 10px rgba(255, 77, 148, 0.3)); }
-            50% { filter: drop-shadow(0 0 25px rgba(255, 77, 148, 0.6)); }
+            0%, 100% { filter: drop-shadow(0 0 8px rgba(255, 107, 157, 0.3)); }
+            50% { filter: drop-shadow(0 0 15px rgba(255, 107, 157, 0.6)); }
         }
 
         .subtitle {
-            color: #ff99cc;
-            font-size: 1.2em;
+            color: #c44569;
+            font-size: 1.1em;
             font-style: italic;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             opacity: 0.9;
-            filter: drop-shadow(0 0 5px rgba(255, 77, 148, 0.4));
+            filter: drop-shadow(0 0 3px rgba(196, 69, 105, 0.3));
         }
 
         .poem-section {
-            margin: 50px 0;
+            margin: 40px 0;
             text-align: center;
             animation: sectionFadeIn 1.5s ease-out;
-            padding: 45px 35px;
-            background: rgba(255, 77, 148, 0.08);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 77, 148, 0.2);
-            backdrop-filter: blur(5px);
+            padding: 35px 25px;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.08), rgba(248, 177, 149, 0.08));
+            border-radius: 18px;
+            border: 1px solid rgba(255, 107, 157, 0.2);
             position: relative;
             overflow: hidden;
-            transition: all 0.5s ease;
-        }
-
-        .poem-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255, 77, 148, 0.1) 0%, transparent 100%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            z-index: -1;
+            transition: all 0.4s ease;
         }
 
         .poem-section:hover {
-            border-color: rgba(255, 77, 148, 0.6);
-            box-shadow: 0 0 30px rgba(255, 77, 148, 0.2);
-        }
-
-        .poem-section:hover::before {
-            opacity: 1;
+            border-color: rgba(255, 107, 157, 0.5);
+            box-shadow: 0 0 20px rgba(255, 107, 157, 0.15);
+            transform: translateY(-5px);
         }
 
         @keyframes sectionFadeIn {
@@ -284,42 +185,37 @@
         }
 
         .poem-title {
-            font-size: 1.95em;
-            background: linear-gradient(135deg, #ff69b4, #ff4d94);
+            font-size: 1.7em;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-weight: 700;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            filter: drop-shadow(0 0 10px rgba(255, 77, 148, 0.3));
+            filter: drop-shadow(0 0 5px rgba(255, 107, 157, 0.2));
         }
 
         .poem-text {
-            color: #e0b0ff;
-            line-height: 2.3;
-            font-size: 1.15em;
-            margin: 20px 0;
+            color: #2d3436;
+            line-height: 2.1;
+            font-size: 1.05em;
+            margin: 15px 0;
             white-space: pre-wrap;
-            letter-spacing: 0.8px;
-            font-weight: 500;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-        }
-
-        .poem-text strong {
-            color: #ff4d94;
-            font-weight: 700;
+            letter-spacing: 0.5px;
+            font-weight: 400;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .poem-divider {
-            margin: 45px 0;
+            margin: 35px 0;
             text-align: center;
-            font-size: 1.8em;
-            letter-spacing: 20px;
-            color: #ff69b4;
+            font-size: 1.6em;
+            letter-spacing: 15px;
+            color: #ff6b9d;
             opacity: 0.8;
-            filter: drop-shadow(0 0 15px rgba(255, 77, 148, 0.5));
+            filter: drop-shadow(0 0 10px rgba(255, 107, 157, 0.3));
             animation: dividerGlow 2s ease-in-out infinite;
         }
 
@@ -329,138 +225,94 @@
         }
 
         .emotional-quote {
-            background: linear-gradient(135deg, rgba(255, 77, 148, 0.15), rgba(138, 43, 226, 0.15));
-            padding: 40px 35px;
-            border-radius: 20px;
-            border-left: 5px solid #ff4d94;
-            border-right: 5px solid rgba(138, 43, 226, 0.6);
-            margin: 45px 0;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.15), rgba(248, 177, 149, 0.15));
+            padding: 30px 25px;
+            border-radius: 18px;
+            border-left: 4px solid #ff6b9d;
+            border-right: 4px solid #c44569;
+            margin: 35px 0;
             font-style: italic;
-            color: #ff99cc;
-            font-size: 1.3em;
+            color: #c44569;
+            font-size: 1.15em;
             box-shadow: 
-                0 0 30px rgba(255, 77, 148, 0.2),
-                inset 0 0 20px rgba(255, 77, 148, 0.1);
-            backdrop-filter: blur(5px);
-            line-height: 2;
+                0 0 20px rgba(255, 107, 157, 0.15),
+                inset 0 0 15px rgba(255, 107, 157, 0.08);
+            line-height: 1.9;
             font-weight: 500;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             position: relative;
-            transition: all 0.5s ease;
+            transition: all 0.4s ease;
         }
 
         .emotional-quote::before {
             content: '"';
-            font-size: 4em;
-            color: rgba(255, 77, 148, 0.2);
+            font-size: 3em;
+            color: rgba(255, 107, 157, 0.15);
             position: absolute;
-            top: 5px;
-            left: 10px;
+            top: 0px;
+            left: 5px;
         }
 
         .emotional-quote:hover {
-            border-left-color: #ff69b4;
-            border-right-color: #8a2be2;
+            border-left-color: #c44569;
+            border-right-color: #ff6b9d;
             box-shadow: 
-                0 0 50px rgba(255, 77, 148, 0.4),
-                inset 0 0 30px rgba(255, 77, 148, 0.15);
+                0 0 30px rgba(255, 107, 157, 0.25),
+                inset 0 0 20px rgba(255, 107, 157, 0.12);
             transform: translateX(5px);
         }
 
         .nav-buttons {
             display: flex;
             justify-content: space-between;
-            margin-top: 60px;
-            gap: 15px;
+            margin-top: 45px;
+            gap: 12px;
             position: relative;
             z-index: 20;
         }
 
         .nav-buttons a {
             flex: 1;
-            padding: 16px;
+            padding: 14px 12px;
             text-decoration: none;
-            border-radius: 18px;
+            border-radius: 15px;
             font-weight: 700;
             text-align: center;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             color: white;
-            font-size: 1.05em;
-            letter-spacing: 1px;
+            font-size: 1em;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
-            border: 2px solid;
-        }
-
-        .nav-buttons a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transition: left 0.4s ease;
-            z-index: -1;
-        }
-
-        .nav-buttons a:hover::before {
-            left: 100%;
+            border: none;
         }
 
         .back-btn {
-            background: linear-gradient(135deg, #ff4d94, #ff69b4);
-            border-color: #ff4d94;
-            box-shadow: 0 0 20px rgba(255, 77, 148, 0.5);
+            background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
         }
 
         .back-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 40px rgba(255, 77, 148, 0.8);
-            border-color: #ff69b4;
+            box-shadow: 0 8px 25px rgba(255, 107, 157, 0.5);
         }
 
         .end-btn {
-            background: linear-gradient(135deg, #8a2be2, #6a0dad);
-            border-color: #8a2be2;
-            box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+            background: linear-gradient(135deg, #c44569, #d76b7a);
+            box-shadow: 0 5px 15px rgba(196, 69, 105, 0.3);
         }
 
         .end-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 0 40px rgba(138, 43, 226, 0.8);
-            border-color: #6a0dad;
+            box-shadow: 0 8px 25px rgba(196, 69, 105, 0.5);
         }
 
-        @media (max-width: 1000px) {
-            .side-images-left,
-            .side-images-right {
-                display: none;
-            }
-
-            .wrapper {
-                justify-content: center;
-            }
-
+        @media (max-width: 768px) {
             .container {
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-
-            .container {
-                padding: 30px 20px;
-                border-radius: 20px;
+                padding: 40px 20px;
             }
 
             .title {
                 font-size: 2em;
-                letter-spacing: 1px;
             }
 
             .subtitle {
@@ -468,7 +320,7 @@
             }
 
             .poem-section {
-                padding: 20px 15px;
+                padding: 25px 20px;
                 margin: 30px 0;
             }
 
@@ -477,56 +329,111 @@
             }
 
             .poem-text {
-                font-size: 0.95em;
-                line-height: 1.9;
+                font-size: 1em;
+                line-height: 2;
             }
 
             .emotional-quote {
                 font-size: 1.05em;
-                padding: 20px 15px;
+                padding: 20px 18px;
                 margin: 25px 0;
             }
 
             .poem-divider {
                 font-size: 1.4em;
                 letter-spacing: 10px;
+                margin: 25px 0;
             }
 
             .nav-buttons {
                 flex-direction: column;
-                margin-top: 40px;
+                margin-top: 30px;
+                gap: 10px;
             }
 
             .nav-buttons a {
-                padding: 14px;
+                padding: 12px;
                 font-size: 0.95em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 8px;
+            }
+
+            .container {
+                padding: 30px 15px;
+                border-radius: 18px;
+                margin: 15px auto;
+            }
+
+            .header {
+                margin-bottom: 30px;
+                padding-bottom: 20px;
+            }
+
+            .title {
+                font-size: 1.6em;
+                letter-spacing: 1px;
+            }
+
+            .subtitle {
+                font-size: 0.9em;
+            }
+
+            .poem-section {
+                padding: 20px 15px;
+                margin: 25px 0;
+                border-radius: 15px;
+            }
+
+            .poem-title {
+                font-size: 1.2em;
+                margin-bottom: 15px;
+            }
+
+            .poem-text {
+                font-size: 0.95em;
+                line-height: 1.85;
+            }
+
+            .emotional-quote {
+                font-size: 1em;
+                padding: 15px 12px;
+                margin: 20px 0;
+                border-radius: 12px;
+            }
+
+            .poem-divider {
+                font-size: 1.2em;
+                letter-spacing: 8px;
+                margin: 20px 0;
+            }
+
+            .nav-buttons {
+                margin-top: 25px;
+            }
+
+            .nav-buttons a {
+                padding: 11px;
+                font-size: 0.9em;
+                border-radius: 12px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="side-images-left">
-            <img src="her.png" alt="Her" class="side-image side-image-1" onerror="this.style.display='none';" />
-            <img src="her2.png" alt="Her" class="side-image side-image-2" onerror="this.style.display='none';" />
-            <img src="her4.png" alt="Her" class="side-image side-image-3" onerror="this.style.display='none';" />
-            <img src="her6.png" alt="Her" class="side-image side-image-4" onerror="this.style.display='none';" />
-            <img src="her8.png" alt="Her" class="side-image side-image-5" onerror="this.style.display='none';" />
-        </div>
+    <div class="container">
+        <div class="content">
+            <div class="header">
+                <div class="title">📝 My Poetry 📝</div>
+                <div class="subtitle">Words From The Heart</div>
+            </div>
 
-        <div class="container">
-            <div class="decorative-element decoration-top-left">✨</div>
-            <div class="decorative-element decoration-bottom-right">💫</div>
-
-            <div class="content">
-                <div class="header">
-                    <div class="title">📝 My Poetry 📝</div>
-                    <div class="subtitle">Words From The Heart</div>
-                </div>
-
-                <div class="poem-section">
-                    <div class="poem-title">Baatein To Bahut Hai Kehne Ko</div>
-                    <div class="poem-text">Baatein To Bahut Hai Kehne Ko..
+            <div class="poem-section">
+                <div class="poem-title">Baatein To Bahut Hai Kehne Ko</div>
+                <div class="poem-text">Baatein To Bahut Hai Kehne Ko..
 Magar Har Baat Jo Mai Kahunga Tumse..
 Tum Maan Logi Kya..?
 
@@ -543,13 +450,13 @@ Ki Duniya Bhar Ke Liye Mai Patthar Sa Hoo,
 Magar Tumhare Aage Mai Kaanch Ho Jaata Hu..
 Aur Mere Ye Aansu Bas Tumhare Liye Behte Hai..
 Toh Tum Maan Logi Kya..?</div>
-                </div>
+            </div>
 
-                <div class="poem-divider">✨ 💕 ✨</div>
+            <div class="poem-divider">✨ 💕 ✨</div>
 
-                <div class="poem-section">
-                    <div class="poem-title">Meri Kamoshiyon Mein Daba Raha Hu</div>
-                    <div class="poem-text">Aur Yu, Toh Ab Mai Tumse Baatein Bahut Kam Karne Laga Hu, Aur Tumhe To Lagta Bhii Hoga..
+            <div class="poem-section">
+                <div class="poem-title">Meri Kamoshiyon Mein Daba Raha Hu</div>
+                <div class="poem-text">Aur Yu, Toh Ab Mai Tumse Baatein Bahut Kam Karne Laga Hu, Aur Tumhe To Lagta Bhii Hoga..
 Ki Pal Bhar Ka Pyar Tha, Pal Bhar Mai Badal Gaya..
 
 Magar Agar Mai Kahu, Ki Mai To Bas Tumhari Baatein Sunna Chahta Hu Zindagi Bhar,
@@ -563,17 +470,17 @@ To Tum Maan Logi Kya..?
 Log Yaha Tak Kehne Lage Hai, Ki ab pehele se kaafi badal sa gaya hoon maain, 
 Par Mai Kahu, Ki ye badlav bhi tumhare aane ke baad hua hai,
 Toh Tum Maan logi kya..?</div>
-                </div>
+            </div>
 
-                <div class="emotional-quote">
-                    "Hosh Me Toh Mai Bas Tumhe Dhundata Hu Na, Magar Ye Sab Kahunga Kabhi Tumse, Toh Tum Maan Logii Kya..?"
-                </div>
+            <div class="emotional-quote">
+                "Hosh Me Toh Mai Bas Tumhe Dhundata Hu Na, Magar Ye Sab Kahunga Kabhi Tumse, Toh Tum Maan Logii Kya..?"
+            </div>
 
-                <div class="poem-divider">💫 🌸 💫</div>
+            <div class="poem-divider">💫 🌸 💫</div>
 
-                <div class="poem-section">
-                    <div class="poem-title">Tum Meri Duniya Ho</div>
-                    <div class="poem-text">Aur Kahi Na Kahi, Mai Apni Bhavnaoo Ke Shor Ko Apni Kamoshiyon Me Daba Raha Hu,
+            <div class="poem-section">
+                <div class="poem-title">Tum Meri Duniya Ho</div>
+                <div class="poem-text">Aur Kahi Na Kahi, Mai Apni Bhavnaoo Ke Shor Ko Apni Kamoshiyon Me Daba Raha Hu,
 Lekin Agar Meri Aankhon Me Chipa Shor Tumse Kabhi Kahe, Ki Tum Meri Duniya,
 Mera Chaand, Mera Ishq Ho..
 Toh Tum Maan Logi Kya..?
@@ -587,20 +494,12 @@ Magar Har Baat Jo Mai Kahunga.. Tumse..
 Tum Maan Logii Kya..?
 
 Bolo.. Chup Kyu Ho..?</div>
-                </div>
-
-                <div class="nav-buttons">
-                    <a href="page4.html" class="back-btn">← Back to Melon & Musk</a>
-                    <a href="index.html" class="end-btn">Begin Again →</a>
-                </div>
             </div>
-        </div>
 
-        <div class="side-images-right">
-            <img src="her1.png" alt="Her" class="side-image side-image-1" onerror="this.style.display='none';" />
-            <img src="her3.png" alt="Her" class="side-image side-image-2" onerror="this.style.display='none';" />
-            <img src="her5.png" alt="Her" class="side-image side-image-3" onerror="this.style.display='none';" />
-            <img src="her7.png" alt="Her" class="side-image side-image-4" onerror="this.style.display='none';" />
+            <div class="nav-buttons">
+                <a href="page4.html" class="back-btn">← Back to Melon & Musk</a>
+                <a href="index.html" class="end-btn">Begin Again →</a>
+            </div>
         </div>
     </div>
 </body>
