@@ -18,14 +18,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
         }
 
         .container {
-            max-width: 700px;
+            max-width: 90vw;
+            width: 100%;
             background: rgba(255, 255, 255, 0.98);
-            border-radius: 30px;
-            padding: 50px 45px;
+            border-radius: 25px;
+            padding: 40px 25px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
             border: 3px solid #ff7675;
             position: relative;
@@ -35,77 +36,46 @@
         /* Rabbit image positions */
         .rabbit-img-top-left {
             position: absolute;
-            top: -40px;
-            left: 20px;
-            width: 120px;
-            height: 120px;
-            border-radius: 20px;
-            border: 4px solid #ff7675;
+            top: -35px;
+            left: 15px;
+            width: 85px;
+            height: 85px;
+            border-radius: 15px;
+            border: 3px solid #ff7675;
             background: white;
             object-fit: cover;
-            box-shadow: 0 10px 30px rgba(255, 118, 117, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 118, 117, 0.4);
             animation: floatIn1 1s ease-out;
             z-index: 5;
         }
 
         .rabbit-img-top-right {
             position: absolute;
-            top: -35px;
-            right: 20px;
-            width: 110px;
-            height: 110px;
-            border-radius: 20px;
-            border: 4px solid #ff7675;
-            background: white;
-            object-fit: cover;
-            box-shadow: 0 10px 30px rgba(255, 118, 117, 0.4);
-            animation: floatIn2 1.2s ease-out;
-            z-index: 5;
-        }
-
-        .rabbit-img-left {
-            position: absolute;
-            top: 50%;
-            left: -50px;
-            width: 100px;
-            height: 100px;
+            top: -30px;
+            right: 15px;
+            width: 80px;
+            height: 80px;
             border-radius: 15px;
-            border: 4px solid #ff7675;
+            border: 3px solid #ff7675;
             background: white;
             object-fit: cover;
-            box-shadow: 0 10px 30px rgba(255, 118, 117, 0.4);
-            transform: translateY(-50%);
-            animation: floatIn3 1.4s ease-out;
-            z-index: 5;
-        }
-
-        .rabbit-img-right {
-            position: absolute;
-            bottom: 40px;
-            right: -40px;
-            width: 110px;
-            height: 110px;
-            border-radius: 20px;
-            border: 4px solid #ff7675;
-            background: white;
-            object-fit: cover;
-            box-shadow: 0 10px 30px rgba(255, 118, 117, 0.4);
-            animation: floatIn4 1.6s ease-out;
+            box-shadow: 0 8px 20px rgba(255, 118, 117, 0.4);
+            animation: floatIn2 1.2s ease-out;
             z-index: 5;
         }
 
         .rabbit-img-bottom {
             position: absolute;
-            bottom: -45px;
+            bottom: -35px;
             left: 50%;
             transform: translateX(-50%);
-            width: 120px;
-            height: 120px;
-            border-radius: 20px;
-            border: 4px solid #ff7675;
+            width: 85px;
+            height: 85px;
+            border-radius: 15px;
+            border: 3px solid #ff7675;
             background: white;
             object-fit: cover;
-            box-shadow: 0 10px 30px rgba(255, 118, 117, 0.4);
+            box-shadow: 0 8px 20px rgba(255, 118, 117, 0.4);
             animation: floatIn5 1.8s ease-out;
             z-index: 5;
         }
@@ -118,16 +88,6 @@
         @keyframes floatIn2 {
             from { opacity: 0; transform: translateY(-40px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes floatIn3 {
-            from { opacity: 0; transform: translateX(-50px) translateY(-50%); }
-            to { opacity: 1; transform: translateX(0) translateY(-50%); }
-        }
-
-        @keyframes floatIn4 {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes floatIn5 {
@@ -153,101 +113,102 @@
         }
 
         .header {
-            font-size: 2.8em;
+            font-size: 2.2em;
             margin-bottom: 10px;
             background: linear-gradient(135deg, #ff7675, #fab1a0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .names {
-            font-size: 2em;
-            color: #d63031;
-            margin-bottom: 5px;
-            font-weight: 700;
-            letter-spacing: 3px;
-        }
-
-        .subtitle {
-            font-size: 1em;
-            color: #636e72;
-            margin-bottom: 25px;
-            font-style: italic;
             letter-spacing: 1px;
         }
 
+        .names {
+            font-size: 1.6em;
+            color: #d63031;
+            margin-bottom: 5px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 0.9em;
+            color: #636e72;
+            margin-bottom: 20px;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+
         .emoji-divider {
-            font-size: 1.8em;
-            margin: 25px 0;
-            letter-spacing: 15px;
+            font-size: 1.5em;
+            margin: 20px 0;
+            letter-spacing: 10px;
         }
 
         .letter {
             color: #2d3436;
-            line-height: 2;
-            font-size: 1.1em;
+            line-height: 1.8;
+            font-size: 1em;
             text-align: justify;
-            margin: 25px 0;
-            letter-spacing: 0.7px;
+            margin: 20px 0;
+            letter-spacing: 0.5px;
         }
 
         .letter p {
-            margin-bottom: 18px;
+            margin-bottom: 15px;
         }
 
         .memory {
             background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(255, 218, 185, 0.3));
-            padding: 20px;
-            border-radius: 15px;
-            margin: 20px 0;
-            border-left: 5px solid #ff7675;
-            border-right: 5px solid #fab1a0;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-left: 4px solid #ff7675;
+            border-right: 4px solid #fab1a0;
             font-style: italic;
             color: #d63031;
-            line-height: 1.9;
+            line-height: 1.7;
             font-weight: 500;
+            font-size: 0.95em;
         }
 
         .quote {
-            font-size: 1.3em;
+            font-size: 1.1em;
             color: #d63031;
             font-weight: 700;
-            margin: 25px 0;
+            margin: 20px 0;
             font-style: italic;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .closing {
-            margin-top: 30px;
-            font-size: 1.15em;
+            margin-top: 25px;
+            font-size: 1em;
             color: #2d3436;
             font-weight: 600;
-            line-height: 2;
+            line-height: 1.8;
         }
 
         .nav-buttons {
             display: flex;
             justify-content: space-between;
-            margin-top: 40px;
-            gap: 15px;
+            margin-top: 30px;
+            gap: 10px;
             position: relative;
             z-index: 20;
         }
 
         .nav-buttons a {
             flex: 1;
-            padding: 14px;
+            padding: 12px 10px;
             text-decoration: none;
-            border-radius: 15px;
-            font-weight: 700;
+            border-radius: 12px;
+            font-weight: 600;
             text-align: center;
             transition: all 0.3s ease;
             color: white;
-            font-size: 1.05em;
-            letter-spacing: 1px;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
         }
 
         .back-btn {
@@ -255,8 +216,8 @@
         }
 
         .back-btn:hover {
-            transform: scale(1.08);
-            box-shadow: 0 10px 25px rgba(74, 185, 255, 0.4);
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(74, 185, 255, 0.4);
         }
 
         .next-btn {
@@ -264,33 +225,132 @@
         }
 
         .next-btn:hover {
-            transform: scale(1.08);
-            box-shadow: 0 10px 25px rgba(255, 118, 117, 0.4);
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 118, 117, 0.4);
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .container {
-                padding: 30px 20px;
+                padding: 35px 20px;
+                border-radius: 20px;
             }
 
             .rabbit-img-top-left,
             .rabbit-img-top-right,
-            .rabbit-img-left,
-            .rabbit-img-right,
             .rabbit-img-bottom {
-                display: none;
+                width: 70px;
+                height: 70px;
             }
 
             .header {
-                font-size: 2em;
+                font-size: 1.8em;
             }
 
             .names {
-                font-size: 1.5em;
+                font-size: 1.3em;
             }
 
             .letter {
+                font-size: 0.95em;
+                line-height: 1.7;
+            }
+
+            .emoji-divider {
+                font-size: 1.3em;
+                letter-spacing: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 30px 15px;
+                border-radius: 18px;
+            }
+
+            .rabbit-img-top-left {
+                top: -28px;
+                left: 10px;
+                width: 65px;
+                height: 65px;
+            }
+
+            .rabbit-img-top-right {
+                top: -25px;
+                right: 10px;
+                width: 60px;
+                height: 60px;
+            }
+
+            .rabbit-img-bottom {
+                bottom: -28px;
+                width: 65px;
+                height: 65px;
+            }
+
+            .header {
+                font-size: 1.5em;
+                margin-bottom: 8px;
+            }
+
+            .names {
+                font-size: 1.1em;
+                margin-bottom: 3px;
+            }
+
+            .subtitle {
+                font-size: 0.8em;
+                margin-bottom: 15px;
+            }
+
+            .letter {
+                font-size: 0.9em;
+                line-height: 1.6;
+                text-align: left;
+                margin: 15px 0;
+            }
+
+            .letter p {
+                margin-bottom: 12px;
+            }
+
+            .memory {
+                padding: 12px;
+                margin: 12px 0;
+                border-radius: 10px;
+                font-size: 0.9em;
+                line-height: 1.6;
+            }
+
+            .quote {
                 font-size: 1em;
+                margin: 15px 0;
+            }
+
+            .closing {
+                margin-top: 20px;
+                font-size: 0.9em;
+                line-height: 1.6;
+            }
+
+            .emoji-divider {
+                font-size: 1.2em;
+                letter-spacing: 6px;
+                margin: 15px 0;
+            }
+
+            .nav-buttons {
+                margin-top: 25px;
+                gap: 8px;
+            }
+
+            .nav-buttons a {
+                padding: 11px 8px;
+                font-size: 0.85em;
+                border-radius: 10px;
             }
         }
     </style>
@@ -299,8 +359,6 @@
     <div class="container">
         <img src="rabbit.jpg.jpeg" alt="Melon" class="rabbit-img-top-left" onerror="this.style.display='none';" />
         <img src="rabbit.jpg.jpeg" alt="Musk" class="rabbit-img-top-right" onerror="this.style.display='none';" />
-        <img src="rabbit.jpg.jpeg" alt="Our love" class="rabbit-img-left" onerror="this.style.display='none';" />
-        <img src="rabbit.jpg.jpeg" alt="Forever" class="rabbit-img-right" onerror="this.style.display='none';" />
         <img src="rabbit.jpg.jpeg" alt="In our hearts" class="rabbit-img-bottom" onerror="this.style.display='none';" />
 
         <div class="content">
@@ -333,7 +391,7 @@
 
                 <p>Every time she sees something that reminds her of you—a pair of floppy ears, a twitching nose, the color pink—her eyes fill with tears. Not tears of sadness alone, but tears of gratitude for having been blessed with your love for however long she had you.</p>
 
-                <div class="quote">"Thank you for all the love, all the cuddles, all the laughter, and all the happiness you brought into her life. Thank you for being the sweetest little angels."</div>
+                <div class="quote">"Thank you for all the love, all the cuddles, all the laughter, and all the happiness you brought into her life."</div>
 
                 <p>You will forever be loved, forever be remembered, and forever be in her heart. Sweet Melon and Musk, you were the best little bunnies anyone could ask for. You were HER bunnies, and she will carry your love with her always.</p>
 
@@ -350,7 +408,7 @@
 
             <div class="nav-buttons">
                 <a href="page3.html" class="back-btn">← Back</a>
-                <a href="page5.html" class="next-btn">Her Poetry →</a>
+                <a href="page5.html" class="next-btn">Poetry →</a>
             </div>
         </div>
     </div>
@@ -362,7 +420,7 @@
             heart.style.position = 'fixed';
             heart.style.left = Math.random() * 100 + '%';
             heart.style.top = '-20px';
-            heart.style.fontSize = (Math.random() * 20 + 12) + 'px';
+            heart.style.fontSize = (Math.random() * 15 + 8) + 'px';
             heart.style.opacity = '0.7';
             heart.style.pointerEvents = 'none';
             heart.style.zIndex = '1';
